@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>说明</title>
+<style type="text/css">
+p{
+	font-family:verdana;
+	font-size:14px;
+	line-height:150%;
+}</style>
+</head>
+
+<body>
+
+<p><strong><font size="3">为什么要写这个库？</font></strong></p>
+<p>让初学者从 Turbo C 2.0(以下简称 TC) 或 Borland C++ 3.1 开始学编程是个不错的建议，只是 TC 
+的环境实在太老了，复制粘贴都很不方便。有一个 Win-TC，简单用了一下，实在是个害人的东西，还不如 TC 
+好呢，因为它简化了所有调试的部分（或许是我没看到？），而调试是写程序相当重要的一部分。</p>
+<p>不少老师直接拿 VC6 来讲 C 语言的，因为 VC6 的编辑和调试环境都很优秀。只可惜在 VC6 
+下只能做一些文字性的练习题，想画条直线画个圆都很难，还要注册窗口类、建消息循环等等，初学者会受严重打击的。许多老师让学生在 TC 
+下绘图，因为这的确会让人有兴趣。</p>
+<p>所以，我想给初学者一个更好的学习环境，就是 VC6 的平台 + TC 的绘图功能，于是就有了这个库。如果您刚开始学 C 语言，或者您是一位教 C 
+语言的老师，那么这个东西一定会让您兴奋的。</p>
+<p><font size="3"><strong>额外说明</strong></font></p>
+<p>这个库并不适合做产品，只建议用来入门学习。如果您想做简单的绘图产品，那么 SDL 库或许更适合您。或者，直接介入 DirectX 编程吧。</p>
+<p><font size="3"><strong>安装</strong></font></p>
+<p>下载的压缩包里除了说明，只有两个主要文件，将 graphics.lib 拷贝到 VC6 文件夹下的 Lib 文件夹内，将 graphics.h 拷贝到 
+Include 文件夹内，仅此而已，所以我就偷懒没有做安装程序了。</p>
+<p><font size="3"><strong>使用说明</strong></font></p>
+<p>目前只把我个人理解中的初学者常用的图形函数做了一下。如果您需要更多的，请发邮件告诉我：yw80@msn.com，或者到我的博客提出来：http://hi.baidu.com/yangw80，我来完善。</p>
+<p>使用上，基本和 TC 没什么区别。看一个画圆的例子吧：</p>
+<p>#include &lt;graphics.h&gt;&nbsp;&nbsp;&nbsp; // 就是需要引用这个图形库<br />
+#include &lt;conio.h&gt;<br />
+void main()<br />
+{<br />
+&nbsp;&nbsp;&nbsp; initgraph(640, 480);&nbsp;&nbsp;&nbsp; // 这里和 TC 略有区别<br />
+&nbsp;&nbsp;&nbsp; circle(200, 200, 100); // 画圆，圆心(200, 200)，半径 100<br />
+&nbsp;&nbsp;&nbsp; getch();&nbsp;&nbsp; // 按任意键继续<br />
+&nbsp;&nbsp;&nbsp; closegraph();&nbsp;&nbsp;&nbsp; // 关闭图形界面<br />
+}</p>
+<p>呵呵，很简单吧。具体的请看函数列表，以及程序范例。</p>
+<p>&nbsp;</p>
+<hr style="height: 1px" />
+<p>ver: 20090909<br />
+by yw80@msn.com</p>
+
+</body>
+
+</html>

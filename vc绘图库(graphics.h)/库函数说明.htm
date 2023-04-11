@@ -1,0 +1,637 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>说明</title>
+<style type="text/css">
+body{
+	font-family:verdana,宋体;
+	font-size:14px;
+	line-height:150%;
+}
+p {
+	margin:0px 0px 8px 0px;
+}
+A:link,A:active,A:visited{TEXT-DECORATION:none;}
+A:hover{TEXT-DECORATION: underline}
+h1{font-size:18px;font-weight:bold;margin:0px}
+h2{font-size:16px;font-weight:bold;margin:48px 0px 8px 0px}
+h3{font-size:14px;font-weight:bold;margin:24px 0px 0px 0px}
+.func{
+	color:black;
+}
+.nofunc{
+	color:silver;
+}
+.inwork{
+	color:red;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Visual C++ 绘图库</h1>
+<h2>目录</h2>
+<h3>模拟 Borland BGI 的函数：</h3>
+<table style="width: 100%">
+	<tr>
+		<td><a href="#arc" class="func">arc</a></td>
+		<td><a href="#bar" class="func">bar</a></td>
+		<td><a href="#bar3d" class="func">bar3d</a></td>
+		<td><a href="#circle" class="func">circle</a></td>
+		<td><a href="#cleardevice" class="func">cleardevice</a></td>
+		<td><a href="#clearviewport" class="func">clearviewport</a></td>
+	</tr>
+	<tr>
+		<td><a href="#closegraph" class="func">closegraph</a></td>
+		<td><a href="#no_driver" class="nofunc">detectgraph</a></td>
+		<td><a href="#drawpoly" class="func">drawpoly</a></td>
+		<td><a href="#ellipse" class="func">ellipse</a></td>
+		<td><a href="#fillellipse" class="func">fillellipse</a></td>
+		<td><a href="#fillpoly" class="func">fillpoly</a></td>
+	</tr>
+	<tr>
+		<td><a href="#floodfill" class="func">floodfill</a></td>
+		<td><a href="#getarccoords" class="func">getarccoords</a></td>
+		<td><a href="#getaspectratio" class="func">getaspectratio</a></td>
+		<td><a href="#getbkcolor" class="func">getbkcolor</a></td>
+		<td><a href="#getcolor" class="func">getcolor</a></td>
+		<td><a href="#no_palette" class="nofunc">getdefaultpalette</a></td>
+	</tr>
+	<tr>
+		<td><a href="#no_driver" class="nofunc">getdrivername</a></td>
+		<td><a href="#getfillpattern" class="func">getfillpattern</a></td>
+		<td><a href="#getfillsettings" class="func">getfillsettings</a></td>
+		<td><a href="#no_driver" class="nofunc">getgraphmode</a></td>
+		<td><a href="#getimage" class="func">getimage</a></td>
+		<td><a href="#getlinesettings" class="func">getlinesettings</a></td>
+	</tr>
+	<tr>
+		<td><a href="#getmaxcolor" class="func">getmaxcolor</a></td>
+		<td><a href="#no_driver" class="nofunc">getmaxmode</a></td>
+		<td><a href="#getmaxx" class="func">getmaxx</a></td>
+		<td><a href="#getmaxy" class="func">getmaxy</a></td>
+		<td><a href="#no_driver" class="nofunc">getmodename</a></td>
+		<td><a href="#no_driver" class="nofunc">getmoderange</a></td>
+	</tr>
+	<tr>
+		<td><a href="#no_palette" class="nofunc">getpalette</a></td>
+		<td><a href="#no_palette" class="nofunc">getpalettesize</a></td>
+		<td><a href="#getpixel" class="func">getpixel</a></td>
+		<td><a href="#no_font" class="nofunc">gettextsettings</a></td>
+		<td><a href="#getviewsettings" class="func">getviewsettings</a></td>
+		<td><a href="#getx" class="func">getx</a></td>
+	</tr>
+	<tr>
+		<td><a href="#gety" class="func">gety</a></td>
+		<td><a href="#graphdefaults" class="func">graphdefaults</a></td>
+		<td><a href="#no_driver" class="nofunc">grapherrormsg</a></td>
+		<td><a href="#no_driver" class="nofunc">_graphfreemem</a></td>
+		<td><a href="#no_driver" class="nofunc">_graphgetmem</a></td>
+		<td><a href="#no_driver" class="nofunc">graphresult</a></td>
+	</tr>
+	<tr>
+		<td><a href="#no_other" class="nofunc">imagesize</a></td>
+		<td><a href="#initgraph" class="func">initgraph</a></td>
+		<td><a href="#no_driver" class="nofunc">installuserdriver</a></td>
+		<td><a href="#no_font" class="nofunc">installuserfont</a></td>
+		<td><a href="#line" class="func">line</a></td>
+		<td><a href="#line" class="func">linerel</a></td>
+	</tr>
+	<tr>
+		<td><a href="#line" class="func">lineto</a></td>
+		<td><a href="#moveto" class="func">moverel</a></td>
+		<td><a href="#moveto" class="func">moveto</a></td>
+		<td><a href="#outtext" class="func">outtext</a></td>
+		<td><a href="#outtextxy" class="func">outtextxy</a></td>
+		<td><a href="#pieslice" class="func">pieslice</a></td>
+	</tr>
+	<tr>
+		<td><a href="#putimage" class="func">putimage</a></td>
+		<td><a href="#putpixel" class="func">putpixel</a></td>
+		<td><a href="#rectangle" class="func">rectangle</a></td>
+		<td><a href="#no_driver" class="nofunc">registerbgidriver</a></td>
+		<td><a href="#no_driver" class="nofunc">registerfarbgidriver</a></td>
+		<td><a href="#no_font" class="nofunc">registerbgifont</a></td>
+	</tr>
+	<tr>
+		<td><a href="#no_font" class="nofunc">registerfarbgifont</a></td>
+		<td><a href="#no_driver" class="nofunc">restorecrtmode</a></td>
+		<td><a href="#sector" class="func">sector</a></td>
+		<td><a href="#no_driver" class="nofunc">setactivepage</a></td>
+		<td><a href="#no_palette" class="nofunc">setallpalette</a></td>
+		<td><a href="#setaspectratio" class="func">setaspectratio</a></td>
+	</tr>
+	<tr>
+		<td><a href="#setbkcolor" class="func">setbkcolor</a></td>
+		<td><a href="#setcolor" class="func">setcolor</a></td>
+		<td><a href="#setfillpattern" class="func">setfillpattern</a></td>
+		<td><a href="#setfillstyle" class="func">setfillstyle</a></td>
+		<td><a href="#no_driver" class="nofunc">setgraphbufsize</a></td>
+		<td><a href="#no_driver" class="nofunc">setgraphmode</a></td>
+	</tr>
+	<tr>
+		<td><a href="#setlinestyle" class="func">setlinestyle</a></td>
+		<td><a href="#no_palette" class="nofunc">setpalette</a></td>
+		<td><a href="#no_palette" class="nofunc">setrgbpalette</a></td>
+		<td><a href="#no_font" class="nofunc">settextjustify</a></td>
+		<td><a href="#no_font" class="nofunc">settextstyle</a></td>
+		<td><a href="#no_font" class="nofunc">setusercharsize</a></td>
+	</tr>
+	<tr>
+		<td><a href="#setviewport" class="func">setviewport</a></td>
+		<td><a href="#no_driver" class="nofunc">setvisualpage</a></td>
+		<td><a href="#setwritemode" class="func">setwritemode</a></td>
+		<td><a href="#textheight" class="func">textheight</a></td>
+		<td><a href="#textwidth" class="func">textwidth</a></td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<h3>新增函数：</h3>
+<table style="width: 100%">
+	<tr>
+		<td><a href="#SetFont" class="func">SetFont</a></td>
+		<td><a href="#GetFont" class="func">GetFont</a></td>
+		<td><a href="#GetGraphicsVer" class="func">GetGraphicsVer</a></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<h3>模拟 Borland BGI 的常量、数据类型、全局变量：</h3>
+<table style="width: 100%">
+	<tr>
+		<td><a href="#arccoordstype" class="func">arccoordstype</a></td>
+		<td><a href="#no_driver" class="nofunc">CGA_COLORS</a></td>
+		<td><a href="#COLORS" class="func">COLORS</a></td>
+		<td><a href="#no_driver" class="nofunc">EGA_colors</a></td>
+		<td><a href="#fill_patterns" class="func">fill_patterns</a></td>
+		<td><a href="#fillsettingstype" class="func">fillsettingstype</a></td>
+	</tr>
+	<tr>
+		<td><a href="#no_font" class="nofunc">font_names</a></td>
+		<td><a href="#no_driver" class="nofunc">graphics_drivers</a></td>
+		<td><a href="#no_driver" class="nofunc">graphics_errors</a></td>
+		<td><a href="#no_driver" class="nofunc">graphics_modes</a></td>
+		<td><a href="#no_font" class="nofunc">HORIZ_DIR</a></td>
+		<td><a href="#line_styles" class="func">line_styles</a></td>
+	</tr>
+	<tr>
+		<td><a href="#line_widths" class="func">line_widths</a></td>
+		<td><a href="#linesettingstype" class="func">linesettingstype</a></td>
+		<td><a href="#MAXCOLORS" class="func">MAXCOLORS</a></td>
+		<td><a href="#no_palette" class="nofunc">palettetype</a></td>
+		<td><a href="#pointtype" class="func">pointtype</a></td>
+		<td><a href="#putimage_ops" class="func">putimage_ops</a></td>
+	</tr>
+	<tr>
+		<td><a href="#no_font" class="nofunc">text_just</a></td>
+		<td><a href="#no_font" class="nofunc">textsettingstype</a></td>
+		<td><a href="#no_font" class="nofunc">USER_CHAR_SIZE</a></td>
+		<td><a href="#no_font" class="nofunc">VERT_DIR</a></td>
+		<td><a class="func" href="#viewporttype">viewporttype</a></td>
+		<td>&nbsp;</td>
+	</tr>
+</table>
+<h2>基本概念</h2>
+<p>颜色：</p>
+<p>表示颜色与 Borland BGI 的区别最大，因为 Windows 下的颜色十分丰富，远不是过去 DOS 
+能比的。在这个绘图函数库中，有三种办法表示颜色：</p>
+<p>1. 用 16 进制的颜色表示，形式为：<br />
+0x00bbggrr (bb=蓝，gg=绿，rr=红)<br />
+例如，设置绘图色为蓝色，可以用：<br />
+setcolor(0x00ff0000);</p>
+<p>2. 用 RGB 宏协助配色，形式为：<br />
+RGB(rr, gg, bb);<br />
+rr, gg, bb 取值范围是 0～255。例如，设置绘图色为蓝色，可以用：<br />
+setcolor(RGB(255, 30, 70));</p>
+<p>3. 用预定义颜色：<br />
+BLACK: 黑，BLUE: 蓝，GREEN: 绿，CYAN: 青，RED: 红，<br />
+MAGENTA: 紫，BROWN: 棕，LIGHTGRAY: 浅灰，DARKGRAY: 深灰，<br />
+LIGHTBLUE: 亮蓝，LIGHTGREEN: 亮绿，LIGHTCYAN: 亮青，LIGHTRED: 亮红，<br />
+LIGHTMAGENTA: 亮紫，YELLOW: 黄，WHITE: 白<br />
+例如，设置绘图色为蓝色，可以用：<br />
+setcolor(BLUE);</p>
+<h2>模拟 Borland BGI 的函数说明</h2>
+<h3><a name="initgraph">初始化图形环境</a></h3>
+<p>void initgraph(int Width, int Height);<br />
+void initgraph(int Width, int Height, int Flag);<br />
+参数说明：<br />
+Width: 绘图环境的宽度。<br />
+Height: 绘图环境的高度。<br />
+Style: 绘图环境的样式，当值为 SHOWCONSOLE 表示可以保留原控制台窗口。默认为 NULL。</p>
+<h3><a name="closegraph">关闭图形环境</a></h3>
+<p>void closegraph();</p>
+<h3><a name="cleardevice">清除屏幕</a></h3>
+<p>void cleardevice();<br />
+说明：<br />
+用当前背景色清空屏幕，并将当前点移至 (0, 0)。</p>
+<h3><a name="getcolor">获取当前绘图前景色</a></h3>
+<p>COLORREF getcolor();</p>
+<h3><a name="setcolor">设置当前绘图前景色</a></h3>
+<p>void setcolor(COLORREF color);<br />
+参数说明：<br />
+color: 要设置的颜色。</p>
+<h3><a name="getbkcolor">获取当前绘图背景色</a></h3>
+<p>COLORREF getbkcolor();</p>
+<h3><a name="setbkcolor">设置当前绘图背景色</a></h3>
+<p>void setbkcolor(COLORREF color);<br />
+参数说明：<br />
+color: 要设置的颜色。<br />
+注：<br />
+与 Borland BGI 库有所不同，BGI 
+是通过调色板设置的背景色，因此可以在保持绘图内容不变的前提下更换背景色。但是这个绘图库取消了调色板的概念，因此无法自动替换现有填充的背景色。</p>
+<h3><a name="getviewsettings">获取视图信息</a></h3>
+<p>void getviewsettings(struct viewporttype *viewport);<br />
+参数说明：<br />
+viewport: 指向 viewporttype 结构体，保存返回的视图信息。</p>
+<h3><a name="setviewport">设置视图</a></h3>
+<p>void setviewport(int left, int top, int right, int bottom, int clip);<br />
+参数说明：<br />
+left, top, right, bottom: 表示新视图的矩形区域，(left, top) 将成为新的原点。<br />
+clip: 是否裁剪，如果非零，所有超出视图区域的绘图都会被裁剪掉。<br />
+备注：<br />
+执行后，&quot;当前点&quot;会被移动到新的视图的(0,0)位置。</p>
+<h3><a name="clearviewport">清空视图</a></h3>
+<p>void clearviewport();</p>
+<h3><a name="getlinesettings">获取当前线形</a></h3>
+<p>void getlinesettings(struct linesettingstype *lineinfo);</p>
+<h3><a name="setlinestyle">设置当前线形</a></h3>
+<p>void setlinestyle(int linestyle, unsigned int upattern, int thickness);<br />
+参数说明：<br />
+linestyle: 线样式。相比较 BGI 库，该库的线样式相对紧凑些。<br />
+upattern: 当线样式为 USERBIT_LINE 时，改数据表示自定义的线形。二进制位为 1 表示画线，为 0 表示空白。与 BGI 库不同的是，BGI 
+库该字段为 16 位，而本绘图库该字段为 32 位。<br />
+thickness: 线粗细。</p>
+<h3><a name="getfillsettings">获取填充类型</a></h3>
+<p>void getfillsettings(struct fillsettingstype *fillinfo);</p>
+<h3><a name="setfillstyle">设置填充类型</a></h3>
+<p>void setfillstyle(int pattern, int color);<br />
+参数说明：<br />
+pattern: 填充类型。详见 fill_patterns。<br />
+color: 填充颜色。</p>
+<h3><a name="getfillpattern">获取自定义填充类型</a></h3>
+<p>void getfillpattern(char *pattern);<br />
+参数说明：<br />
+pattern: 指向 8 个元素的字符数组指针。</p>
+<h3><a name="setfillpattern">设置自定义填充类型</a></h3>
+<p>void setfillpattern(const char *upattern, int color);<br />
+参数说明：<br />
+upattern: 指向 8 个元素的字符数组指针，每个元素 8 个二进制位，由此构成了 8x8 的区域图案，用以填充。<br />
+color: 填充颜色。</p>
+<h3><a name="getaspectratio">获取当前缩放因子</a></h3>
+<p>void getaspectratio(int *xasp, int *yasp);</p>
+<h3><a name="setaspectratio">设置当前缩放因子</a></h3>
+<p>void setaspectratio(int xasp, int yasp);<br />
+参数说明：<br />
+xasp, yasp: x、y 方向上的缩放因子，实际缩放值为 x/10000 和 y/10000。</p>
+<h3><a name="setwritemode">设置绘图位操作模式</a></h3>
+<p>void setwritemode(int mode);<br />
+参数说明：<br />
+mode: 位操作模式，见结构 putimage_ops。<br />
+备注：<br />
+BGI 库仅支持 COPY_PUT 和 XOR_PUT 两种位操作。本绘图库除了模拟原有两种位操作外，还实现了 NOT_PUT、AND_PUT、OR_PUT 
+三种位操作。</p>
+<h3><a name="graphdefaults">重置所有绘图设置为默认值</a></h3>
+<p>void graphdefaults();<br />
+备注：<br />
+该函数重置视图、当前点、绘图色、背景色、线形、填充类型、字体。</p>
+<h3><a name="getpixel">获取点的颜色</a></h3>
+<p>COLORREF getpixel(int x, int y);<br />
+参数说明：<br />
+x, y: 要获取颜色坐标。<br />
+返回值：<br />
+指定点的颜色。</p>
+<h3><a name="putpixel">画点</a></h3>
+<p>void putpixel(int x, int y, COLORREF color);<br />
+参数说明：<br />
+x, y: 点的坐标。<br />
+color: 点的颜色。</p>
+<h3><a name="moveto">移动当前点</a></h3>
+<p>void moveto(int x, int y);<br />
+void moverel(int dx, int dy);<br />
+参数说明：<br />
+x, y: 新的当前点坐标。<br />
+dx, dy: 当前点的偏移量。<br />
+备注：<br />
+有些绘图操作会从“当前点”开始，这个函数可以设置该点。</p>
+<h3><a name="line">画线</a></h3>
+<p>void line(int x1, int y1, int x2, int y2);<br />
+void linerel(int dx, int dy);<br />
+void lineto(int x, int y);<br />
+参数说明：<br />
+x1, y1: 线的起始坐标。<br />
+x2, y2: 线的终止坐标。<br />
+cx, dy: 从“当前点”开始画线，画 cx, cy 的距离。<br />
+x, y: 从“当前点”开始画线，画至坐标 x, y。</p>
+<h3><a name="rectangle">画矩形</a></h3>
+<p>void rectangle(int left, int top, int right, int bottom);<br />
+参数说明：<br />
+left, top, right, bottom: 矩形的左、上、右、下。</p>
+<h3><a name="getarccoords">获取圆弧坐标信息</a></h3>
+<p>void getarccoords(struct arccoordstype *arccoords);<br />
+参数说明：<br />
+arccoords: 指向 arccoordstype 结构的指针。<br />
+备注：<br />
+该函数在画圆弧连接的直线时很有用。</p>
+<h3><a name="arc">画圆弧</a></h3>
+<p>void arc(int x, int y, int stangle, int endangle, int radius);<br />
+参数说明：<br />
+x, y: 圆心。<br />
+stangle: 起始角的度数。<br />
+endangle: 终止角的度数。<br />
+radius: 半径。</p>
+<h3><a name="circle">画圆</a></h3>
+<p>void circle(int x, int y, int radius);<br />
+参数同 arc 函数。</p>
+<h3><a name="pieslice">画填充圆扇形</a></h3>
+<p>void pieslice(int x, int y, int stangle, int endangle, int radius);<br />
+参数通 arc 函数。</p>
+<h3><a name="ellipse">画椭圆弧线</a></h3>
+<p>void ellipse(int x, int y, int stangle, int endangle, int xradius, int 
+yradius);<br />
+参数说明：<br />
+x,y: 圆心。<br />
+stangle: 起始角的度数。<br />
+endangle: 终止角的度数。<br />
+xradius: x 方向半径。<br />
+yradius: y 方向半径。</p>
+<h3><a name="fillellipse">画填充椭圆</a></h3>
+<p>void fillellipse(int x, int y, int xradius, int yradius);<br />
+参数同 ellipse 函数。</p>
+<h3><a name="sector">画填充椭圆扇形</a></h3>
+<p>void sector(int x, int y, int stangle, int endangle, int xradius, int 
+yradius);<br />
+参数同 ellipse 函数。</p>
+<h3><a name="bar">画无边框填充矩形</a></h3>
+<p>void bar(int left, int top, int right, int bottom);<br />
+参数说明：<br />
+left,top,right,bottom: 矩形的左上角和右下角坐标。</p>
+<h3><a name="bar3d">画有边框三维填充矩形</a></h3>
+<p>void bar3d(int left, int top, int right, int bottom, int depth, int topflag);<br />
+参数说明：<br />
+left,top,right,bottom: 矩形的左上角和右下角坐标。<br />
+depth: 矩形深度。<br />
+topflag: 为 0 时，将不画矩形的三维顶部。可以用来画堆叠的三维矩形。</p>
+<h3><a name="drawpoly">画多边形</a></h3>
+<p>void drawpoly(int numpoints, const int *polypoints);<br />
+参数说明：<br />
+numpoints: 多边形点的个数。<br />
+polypoints: 每个点的坐标，数组元素为 numpoints * 2。<br />
+备注：<br />
+该函数并不会自动连接多边形首尾。如果需要画封闭的多边形，请将最后一个点设置为与第一点相同。</p>
+<h3><a name="fillpoly">画填充的多边形</a></h3>
+<p>void fillpoly(int numpoints, const int *polypoints);<br />
+参数同 drawpoly。</p>
+<h3><a name="floodfill">填充区域</a></h3>
+<p>void floodfill(int x, int y, int border)<br />
+参数说明：<br />
+x,y: 填充的起始点。<br />
+border: 填充的边界颜色。</p>
+<h3><a name="outtext">在当前点输出文字</a></h3>
+<p>void outtext(LPCTSTR textstring);<br />
+参数说明：<br />
+textstring: 要输出的字符串的指针。</p>
+<h3><a name="outtextxy">在指定位置输出文字</a></h3>
+<p>void outtextxy(int x, int y, LPCTSTR textstring);<br />
+参数说明：<br />
+x, y: 输出文字的坐标。<br />
+textstring: 要输出的字符串的指针。</p>
+<h3><a name="textwidth">求字符串的宽</a></h3>
+<p>int textwidth(LPCTSTR textstring);<br />
+参数说明：<br />
+textstring: 指定的字符串指针。<br />
+返回值：<br />
+该字符串实际占用的像素宽度。</p>
+<h3><a name="textheight">求字符串的高</a></h3>
+<p>int textheight(LPCTSTR textstring);<br />
+参数说明：<br />
+textstring: 指定的字符串指针。<br />
+返回值：<br />
+该字符串实际占用的像素高度。</p>
+<h3><a name="SetFont">设置当前字体样式</a>（新增函数）</h3>
+<p>void SetFont(int nHeight,int nWidth,int nEscapement,nOrientation,int fnWeight,DWORD 
+fdwItalic,DWORD fdwUnderline,DWORD fdwStrikeOut,LPCTSTR lpszFace);<br />
+参数说明：<br />
+nHeight: 字符的平均高度。<br />
+nWidth: 字符的平均宽度。<br />
+nEscapement: 字符串的书写角度，单位 0.1 度。<br />
+nOrientation: 每个字符的书写角度，单位 0.1 度。<br />
+fnWeight: 字符的笔画粗细。常用的是 400，默认 0 即可。<br />
+fdwItalic: 是否斜体，TRUE / FALSE。<br />
+fdwUnderline: 是否下划线，TRUE / FALSE。<br />
+fdwStrikeOut: 是否删除线，TRUE / FALSE。<br />
+lpszFace: 字体名称。</p>
+<h3><a name="SetFont2">设置当前字体样式</a>（新增函数）</h3>
+<p>void SetFont(const LOGFONT *font);<br />
+参数说明：<br />
+font: 指向 LOGFONT 结构的指针，详见 Windows SDK。常用成员同 SetFont 的另一个重载。</p>
+<h3><a name="GetFont">获取当前字体样式</a>（新增函数）</h3>
+<p>void GetFont(LOGFONT *font);</p>
+<h3><a name="getimage">获取图像</a></h3>
+<p>void getimage(int left, int top, int right, int bottom, IMAGE *imgdst); // 
+从屏幕获取<br />
+void getimage(const char *imagefile, IMAGE *imgdst); // 从 BMP 文件获取<br />
+void getimage(const IMAGE *imgsrc, int left, int top, int right, int bottom, 
+IMAGE *imgdst); // 从 IMAGE 对象中获取<br />
+参数说明：<br />
+left, top, right, bottom: 获取图像的区域。<br />
+imgdst: 保存获取的图像的 IMAGE 对象。<br />
+imgsrc: 从该 IMAGE 对象获取图像。<br />
+备注：<br />
+获取图像与绘制图像与 BGI 库略有区别。</p>
+<h3><a name="putimage">绘制图像</a></h3>
+<p>void putimage(int left, int top, IMAGE *img, int op);<br />
+参数说明：<br />
+left, top: 绘制图像的位置。<br />
+img: 保存图像的 IMAGE 对象指针。<br />
+op: 绘制图像的位操作，详见 putimage_ops 位操作模式。<br />
+备注：<br />
+该函数的 op 参数还支持 Windows 定义的多种位操作模式，详见 Windows SDK 函数 BitBlt() 的 dwRop 参数。</p>
+<h3><a name="getmaxcolor">获取最大颜色值</a></h3>
+<p>int getmaxcolor();</p>
+<h3><a name="getmaxx">获取最大 x 坐标</a></h3>
+<p>int getmaxx();</p>
+<h3><a name="getmaxy">获取最大 y 坐标</a></h3>
+<p>int getmaxy();</p>
+<h3><a name="getx">获取当前 x 坐标</a></h3>
+<p>int getx();</p>
+<h3><a name="gety">获取当前 y 坐标</a></h3>
+<p>int gety();</p>
+<h3><a name="GetVer">获取当前版本</a>（新增函数）</h3>
+<p>int GetGraphicsVer();&nbsp;</p>
+<h2>模拟 Borland BGI 的常量、数据类型、全局变量</h2>
+<h3><a name="COLORS">颜色枚举常量 COLORS</a></h3>
+<table>
+	<tr>
+		<td>常量</td>
+		<td>值</td>
+		<td>颜色</td>
+		<td rowspan="9" style="width: 60px">&nbsp;</td>
+		<td>常量</td>
+		<td>值</td>
+		<td>颜色</td>
+	</tr>
+	<tr>
+		<td>BLACK</td>
+		<td>0</td>
+		<td>黑</td>
+		<td>DARKGRAY</td>
+		<td>0x545454</td>
+		<td>深灰</td>
+	</tr>
+	<tr>
+		<td>BLUE</td>
+		<td>0xA80000</td>
+		<td>蓝</td>
+		<td>LIGHTBLUE</td>
+		<td>0xFC5454</td>
+		<td>亮蓝</td>
+	</tr>
+	<tr>
+		<td>GREEN</td>
+		<td>0x00A800</td>
+		<td>绿</td>
+		<td>LIGHTGREEN</td>
+		<td>0x54FC54</td>
+		<td>亮绿</td>
+	</tr>
+	<tr>
+		<td>CYAN</td>
+		<td>0xA8A800</td>
+		<td>青</td>
+		<td>LIGHTCYAN</td>
+		<td>0xFCFC54</td>
+		<td>亮青</td>
+	</tr>
+	<tr>
+		<td>RED</td>
+		<td>0x0000A8</td>
+		<td>红</td>
+		<td>LIGHTRED</td>
+		<td>0x5454FC</td>
+		<td>亮红</td>
+	</tr>
+	<tr>
+		<td>MAGENTA</td>
+		<td>0xA800A8</td>
+		<td>紫</td>
+		<td>LIGHTMAGENTA</td>
+		<td>0xFC54FC</td>
+		<td>亮紫</td>
+	</tr>
+	<tr>
+		<td>BROWN</td>
+		<td>0x0054A8</td>
+		<td>棕</td>
+		<td>YELLOW</td>
+		<td>0x54FCFC</td>
+		<td>黄</td>
+	</tr>
+	<tr>
+		<td>LIGHTGRAY</td>
+		<td>0xA8A8A8</td>
+		<td>浅灰</td>
+		<td>WHITE</td>
+		<td>0xFCFCFC</td>
+		<td>白</td>
+	</tr>
+</table>
+
+<h3><a name="MAXCOLORS">最大的颜色常量 MAXCOLORS</a></h3>
+<p>该常量始终为 0xffffff</p>
+<h3><a name="viewporttype">视图设置信息</a></h3>
+<p>struct viewporttype<br />
+{<br />
+&nbsp;&nbsp;&nbsp; int left, top, right, bottom;<br />
+&nbsp;&nbsp;&nbsp; int clip;<br />
+}</p>
+<h3><a name="line_styles">线样式</a></h3>
+<p>enum line_styles<br />
+{<br />
+&nbsp;&nbsp;&nbsp; SOLID_LINE = 0,<br />
+&nbsp;&nbsp;&nbsp; DOTTED_LINE = 1,<br />
+&nbsp;&nbsp;&nbsp; CENTER_LINE = 2,<br />
+&nbsp;&nbsp;&nbsp; DASHED_LINE = 3,<br />
+&nbsp;&nbsp;&nbsp; USERBIT_LINE = 4<br />
+};</p>
+<h3><a name="line_widths">线宽</a></h3>
+<p>enum line_widths<br />
+{<br />
+&nbsp;&nbsp;&nbsp; NORM_WIDTH = 1,<br />
+&nbsp;&nbsp;&nbsp; THICK_WIDTH = 3<br />
+};</p>
+<h3><a name="linesettingstype">线形</a></h3>
+<p>struct linesettingstype<br />
+{<br />
+&nbsp;&nbsp;&nbsp; int linestyle;<br />
+&nbsp;&nbsp;&nbsp; unsigned upattern;<br />
+&nbsp;&nbsp;&nbsp; int thickness;<br />
+};</p>
+<h3><a name="fill_patterns">填充模式</a></h3>
+<p>enum fill_patterns<br />
+{<br />
+&nbsp;&nbsp;&nbsp; EMPTY_FILL, /* fills area in background color */<br />
+&nbsp;&nbsp;&nbsp; SOLID_FILL, /* fills area in solid fill color */<br />
+&nbsp;&nbsp;&nbsp; LINE_FILL, /* --- fill */<br />
+&nbsp;&nbsp;&nbsp; LTSLASH_FILL, /* /// fill */<br />
+&nbsp;&nbsp;&nbsp; SLASH_FILL, /* /// fill with thick lines */<br />
+&nbsp;&nbsp;&nbsp; BKSLASH_FILL, /* \\\ fill with thick lines */<br />
+&nbsp;&nbsp;&nbsp; LTBKSLASH_FILL, /* \\\ fill */<br />
+&nbsp;&nbsp;&nbsp; HATCH_FILL, /* light hatch fill */<br />
+&nbsp;&nbsp;&nbsp; XHATCH_FILL, /* heavy cross hatch fill */<br />
+&nbsp;&nbsp;&nbsp; INTERLEAVE_FILL, /* interleaving line fill */<br />
+&nbsp;&nbsp;&nbsp; WIDE_DOT_FILL, /* Widely spaced dot fill */<br />
+&nbsp;&nbsp;&nbsp; CLOSE_DOT_FILL, /* Closely spaced dot fill */<br />
+&nbsp;&nbsp;&nbsp; USER_FILL /* user defined fill */<br />
+};</p>
+<h3><a name="fillsettingstype">填充类型</a></h3>
+<p>struct fillsettingstype<br />
+{<br />
+&nbsp;&nbsp;&nbsp; int pattern;<br />
+&nbsp;&nbsp;&nbsp; int color;<br />
+};</p>
+<h3><a name="pointtype">点</a></h3>
+<p>struct pointtype<br />
+{<br />
+&nbsp;&nbsp;&nbsp; int x, y;<br />
+};</p>
+<h3><a name="arccoordstype">圆弧坐标信息</a></h3>
+<p>struct arccoordstype<br />
+{<br />
+&nbsp;&nbsp;&nbsp; int x, y;<br />
+&nbsp;&nbsp;&nbsp; int xstart, ystart, xend, yend;<br />
+};</p>
+<h3><a name="putimage_ops">位操作模式</a></h3>
+<p>enum putimage_ops<br />
+{<br />
+&nbsp;&nbsp;&nbsp; COPY_PUT, /* MOV */<br />
+&nbsp;&nbsp;&nbsp; XOR_PUT, /* XOR */<br />
+&nbsp;&nbsp;&nbsp; OR_PUT, /* OR */<br />
+&nbsp;&nbsp;&nbsp; AND_PUT, /* AND */<br />
+&nbsp;&nbsp;&nbsp; NOT_PUT /* NOT */<br />
+};</p>
+<h2>不支持的函数</h2>
+<h3><a name="no_driver">驱动相关函数</a>：</h3>
+<p>Windows 硬件无关，因此不再需要 DOS 下繁琐的图形卡驱动了，并且颜色提升到了 24bit 真彩色，以下函数及数据无效：<br />
+detectgraph，
+getdrivername，getgraphmode，getmaxmode，getmodename，getmoderange，grapherrormsg，_graphfreemem，_graphgetmem，graphresult，installuserdriver，registerbgidriver，registerfarbgidriver，restorecrtmode，setgraphbufsize，setgraphmode，setactivepage，setvisualpage，CGA_COLORS，EGA_colors，graphics_drivers，graphics_errors，graphics_modes。</p>
+<h3><a name="no_palette">调色板相关函数</a>：</h3>
+<p style="height: 42px">由于颜色数量由过去的16色提高到了24位色，所以没有了调色板的概念，因此涉及到调色板的函数都是无效的：<br />
+getdefaultpalette，getpalette，getpalettesize，setallpalette，setpalette，setrgbpalette，palettetype。</p>
+<h3><a name="no_font">字体相关函数</a>：</h3>
+<p>Windows 下的字体取决于用户的系统，所以不再使用以下 BGI 库中的字体相关函数：<br />
+gettextsettings，installuserfont，settextjustify，settextstyle，setusercharsize，font_names，HORIZ_DIR，text_just，textsettingstype，USER_CHAR_SIZE，VERT_DIR。</p>
+<h3><a name="no_other">略有改动的函数：</a></h3>
+<p>getimage / putimage / imagesize：被新的 getimage / putimage / IMAGE 
+取代，新的一组语句更简单、更安全，并且支持直接读取图片，详见：http://hi.baidu.com/yangw80/blog/item/464b42c8a795971e7f3e6ffa.html</p>
+<p>&nbsp;</p>
+<hr style="height: 1px" />
+<p>ver: 20090909<br />
+by yw80@msn.com</p>
+
+</body>
+
+</html>
