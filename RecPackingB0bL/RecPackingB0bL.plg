@@ -1,0 +1,34 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: RecPackingB0bL - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE0.tmp" with contents
+[
+/nologo /MLd /W3 /GX /O2 /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/RecPackingB0bL.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"E:\资料\王磊文件\课程\2016-2017上学期\软件测试资料\2014-9-30 二维矩形packing\源程序\RecPackingB0bL\RecPackingB0bL.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE0.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE1.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/RecPackingB0bL.pdb" /debug /machine:I386 /out:"Debug/RecPackingB0bL.exe" /pdbtype:sept 
+".\Debug\RecPackingB0bL.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSPE1.tmp"
+<h3>Output Window</h3>
+Compiling...
+RecPackingB0bL.cpp
+E:\资料\王磊文件\课程\2016-2017上学期\软件测试资料\2014-9-30 二维矩形packing\源程序\RecPackingB0bL\RecPackingB0bL.cpp(449) : warning C4101: 'i' : unreferenced local variable
+E:\资料\王磊文件\课程\2016-2017上学期\软件测试资料\2014-9-30 二维矩形packing\源程序\RecPackingB0bL\RecPackingB0bL.cpp(579) : warning C4101: 'flag' : unreferenced local variable
+Linking...
+
+
+
+<h3>Results</h3>
+RecPackingB0bL.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
